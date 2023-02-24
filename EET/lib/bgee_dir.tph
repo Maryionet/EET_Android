@@ -99,7 +99,7 @@ OUTER_WHILE (valid_dir = 0) BEGIN
 	ACTION_IF NOT (FILE_EXISTS ~%bgee_dir%/movies/sodcin05.wbm~) BEGIN
 		PRINT ~~
 		PRINT @900005 //Invalid BG:EE directory, or incorrect BG:EE installation. It is safe to abort this installation by closing this window or pressing Ctrl+C.
-		PRINT @900004 //Enter the full path to your BG:EE installation then press Enter. Example: C:\Program Files (x86)\BeamDog\Games\00806
+		PRINT @900004 //Enter the full path to your BG:EE installation then press Enter. Example: /Emulated/Storage/0/Documents/bgee+sod
 		ACTION_READLN bgee_dir
 	END ELSE BEGIN
 		OUTER_SET valid_dir = 1

@@ -340,6 +340,25 @@ ACTION_FOR_EACH file IN animate.ids anisnd.ids class.ids gtimes.ids kit.ids miss
 END
 
 /////                                                  \\\\\
+///// Adventurers of Neverwinter                       \\\\\
+///// Collect SoD "become leader" lines                \\\\\
+/////                                                  \\\\\
+
+PRINT ~~
+PRINT ~Collect SoD AoN "Become Leader" responses...~
+
+ACTION_FOR_EACH file IN bdtpagb.wav bdtpamb.wav bdtpbeb.wav bdtpdgb.wav bdtpehb.wav bdtpsdb.wav bdtptob.wav BEGIN
+	ACTION_IF (FILE_EXISTS ~%bgee_dir%/lang/en_US/sounds/%file%~) BEGIN
+		COPY_LARGE + ~%bgee_dir%/lang/en_US/sounds/%file%~ ~%MOD_FOLDER%/temp/wav~
+	END
+END
+
+ACTION_IF FILE_EXISTS ~%MOD_FOLDER%/lib/prep_AON.tph~ AND FILE_EXISTS ~%MOD_FOLDER%/temp/wav/bdtpagb.wav~ BEGIN
+	INCLUDE ~%MOD_FOLDER%/lib/prep_AON.tph~
+END
+
+
+/////                                                  \\\\\
 ///// BG2:EE files patching                            \\\\\
 /////                                                  \\\\\
 
@@ -1539,6 +1558,27 @@ BUT_ONLY
 
 COMPILE ~%patch_dir%/d~
 	~%MOD_FOLDER%/compile/d~
+
+/////                                                  \\\\\
+///// workaround for engine differences                \\\\\
+/////                                                  \\\\\
+
+//local scripts are not processing after MakeUnselectable is used
+//including this in cleanBG1.d fails on newline pattern matching
+COPY_EXISTING ~SHARTJ.DLG~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		SPRINT textToReplace ~ActionOverride("DORN",MakeUnselectable(1000))
+MakeUnselectable(1000)~
+		COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+		PATCH_IF (num_matches > 0) BEGIN
+			REPLACE_TEXTUALLY ~%textToReplace%~ ~ReallyForceSpellRES("K#UNSELE","SHARTEEL")
+			ReallyForceSpellRES("K#UNSELE","DORN")~
+			PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+		END ELSE BEGIN
+			PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+		END
+	END
+BUT_ONLY
 
 /////                                                  \\\\\
 ///// EFF                                              \\\\\
