@@ -561,9 +561,14 @@ ACTION_FOR_EACH file IN IMOEN_ IMOEN IMOEN2 IMOE25 BEGIN
 	EXTEND_BOTTOM ~%file%.BCS~ ~.../IMOEN-eb.baf~
 	COPY_EXISTING  ~%file%.BCS~ ~override~
 		DECOMPILE_AND_PATCH BEGIN
-			REPLACE_TEXTUALLY ~SetInterrupt(FALSE)[%newline]*SetGlobal("BD_JOINXP","LOCALS",1)[%newline]*SetInterrupt(TRUE)~ ~SetInterrupt(FALSE)
-    SetGlobal("BD_JOINXP","LOCALS",2)
-    SetInterrupt(TRUE)~
+			SPRINT textToReplace ~SetInterrupt(FALSE)[%newline%]*SetGlobal("BD_JOINXP","LOCALS",1)\(\([%newline%]*ChangeStat(Myself,XP,[0-9]+,SET)\)?[%newline%]*SetInterrupt(TRUE)\)~
+			COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+			PATCH_IF (num_matches > 0) BEGIN
+				REPLACE_TEXTUALLY ~%textToReplace%~ ~SetInterrupt(FALSE) SetGlobal("BD_JOINXP","LOCALS",2) \1~
+				PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+			END ELSE BEGIN
+				PATCH_PRINT ~Patching: could not find %textToReplace% in %SOURCE_FILESPEC%~
+			END
 		END
 	BUT_ONLY
 END
@@ -672,6 +677,14 @@ COPY_EXISTING ~BDBALDUR.BCS~ ~override~
 		COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
 		PATCH_IF (num_matches > 0) BEGIN
 			REPLACE_TEXTUALLY ~%textToReplace%~ ~Player1~
+			PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+		END ELSE BEGIN
+			PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+		END
+		SPRINT textToReplace ~\([^!]StoryModeOn()[%newline%]*!CheckSpellState(Player[2-6],STORY_MODE)[%newline%]*InParty(Player[2-6])\)~
+		COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+		PATCH_IF (num_matches > 0) BEGIN
+			REPLACE_TEXTUALLY ~%textToReplace%~ ~\1 !AreaCheck("BD6100")~
 			PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
 		END ELSE BEGIN
 			PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -1276,6 +1289,14 @@ COPY_EXISTING ~BD6100.BCS~ ~override~
 		END ELSE BEGIN
 			PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
 		END
+		SPRINT textToReplace ~StartMovie("sodcin05")~
+		COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+		PATCH_IF (num_matches > 0) BEGIN
+			REPLACE_TEXTUALLY ~%textToReplace%~ ~StartMovie("sodcin05") FadeFromColor([30.0],0)~
+			PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+		END ELSE BEGIN
+			PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+		END
 		SPRINT textToReplace ~ContinueGame(FALSE)[%newline%]*EndCredits()~
 		COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
 		PATCH_IF (num_matches > 0) BEGIN
@@ -1320,6 +1341,11 @@ THEN
     SetGlobal("K#StoryMode","BD6100",1)
     SetGlobal("OHSMODE","GLOBAL",-1)
     ReallyForceSpellDeadRES("OHSMODE2",Player1)
+    ReallyForceSpellDeadRES("OHSMODE2",Player2)
+    ReallyForceSpellDeadRES("OHSMODE2",Player3)
+    ReallyForceSpellDeadRES("OHSMODE2",Player4)
+    ReallyForceSpellDeadRES("OHSMODE2",Player5)
+    ReallyForceSpellDeadRES("OHSMODE2",Player6)
     Continue()
 END
 >>>>>>>>
