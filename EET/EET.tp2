@@ -182,21 +182,6 @@ LAF GET_SYSTEM_ARCH RET SYSTEM_ARCH END
 ACTION_IF ~%SYSTEM_ARCH%~ STR_EQ ~amd64~ BEGIN
 	OUTER_SPRINT arch_var ~x86_64%os_slash%~
 END
-PRINT ~arch_var = %arch_var%~
-ACTION_FOR_EACH file IN lua weidu BEGIN
-	ACTION_IF FILE_EXISTS ~%MOD_FOLDER%/bin/%WEIDU_OS%/%arch_var%%file%%exe%~ BEGIN
-		OUTER_SPRINT EVAL ~%file%~ ~%bin%%MOD_FOLDER%%os_slash%bin%os_slash%%WEIDU_OS%%os_slash%%arch_var%%file%%exe%~
-	END ELSE ACTION_IF (NOT ~%arch_var%~ STR_EQ ~~) AND (FILE_EXISTS ~%MOD_FOLDER%/bin/%WEIDU_OS%/%file%%exe%~) BEGIN
-		OUTER_SPRINT EVAL ~%file%~ ~%bin%%MOD_FOLDER%%os_slash%bin%os_slash%%WEIDU_OS%%os_slash%%file%%exe%~
-	END ELSE BEGIN
-		FAIL ~%file% not found~
-	END
-	OUTER_SPRINT tool EVAL ~%%file%%~
-	ACTION_IF NOT ~%WEIDU_OS%~ STR_EQ ~win32~ BEGIN
-		AT_NOW ~chmod +x %tool%~ EXACT
-	END
-	PRINT ~%file% assigned to %tool%~
-END
 
 /////                                                  \\\\\
 ///// Detect mods installed on BG:EE                   \\\\\
@@ -251,14 +236,14 @@ ACTION_IF NOT ~%log%~ STR_EQ ~~ BEGIN
 	APPEND_OUTER + ~%MOD_FOLDER%/temp/append.tra~ ~%log%~
 END
 
-AT_NOW ~%weidu% --noautoupdate --no-auto-tp2 --logapp --log "%MOD_FOLDER%/temp/bash.debug" --game "%bgee_dir%" --use-lang "%LANGUAGE_BG1%" --traify# 200000 --traify-tlk --out "%MOD_FOLDER%/temp/bgee.tra"~
+AT_NOW ~weidu --noautoupdate --no-auto-tp2 --logapp --log "%MOD_FOLDER%/temp/bash.debug" --game "%bgee_dir%" --use-lang "%LANGUAGE_BG1%" --traify# 200000 --traify-tlk --out "%MOD_FOLDER%/temp/bgee.tra"~
 
-AT_NOW ~%lua% %MOD_FOLDER%/lib/tlk_cnt.lua~
+AT_NOW ~lua %MOD_FOLDER%/lib/tlk_cnt.lua~
 COPY + ~%MOD_FOLDER%/temp/tlk_cnt.txt~ ~%MOD_FOLDER%/temp~
 	READ_LONG 0xa "tlk_end"
 	SET tlk_end = tlk_end + 200000 - 1
 
-AT_NOW ~%lua% %MOD_FOLDER%/lib/tra_merge.lua~
+AT_NOW ~lua %MOD_FOLDER%/lib/tra_merge.lua~
 
 <<<<<<<< .../string_set.tph
 PRINT ~tlk_start = %tlk_start%; tlk_end = %tlk_end%~
@@ -278,7 +263,7 @@ ACTION_FOR_EACH var IN are bcs chr cre dlg eff ini itm pro spl sto vef vvc wed B
 	PRINT ~~
 	PRINT ~Preparing %var% files...~
 	MKDIR ~%patch_dir%/%var%~
-	AT_NOW ~%weidu% --noautoupdate --no-auto-tp2 --logapp --log "%MOD_FOLDER%/temp/bash.debug" --game "%bgee_dir%" --use-lang "%LANGUAGE_BG1%" --out "%patch_dir%/%var%" --biff-get-rest "^.*\.%var%$"~
+	AT_NOW ~weidu --noautoupdate --no-auto-tp2 --logapp --log "%MOD_FOLDER%/temp/bash.debug" --game "%bgee_dir%" --use-lang "%LANGUAGE_BG1%" --out "%patch_dir%/%var%" --biff-get-rest "^.*\.%var%$"~
 	LAM bash_log
 	ACTION_FOR_EACH dir IN ~%bgee_dir%/override~ ~%bgee_dir%/lang/%LANGUAGE_BG1%/override~ BEGIN
 		ACTION_BASH_FOR ~%dir%~ ~^.+\.%var%$~ BEGIN
@@ -294,7 +279,7 @@ ACTION_FOR_EACH file IN baldur.gam worldmap.wmp bgmap.wmp sodmap.wmp BEGIN
 	ACTION_IF (FILE_EXISTS ~%bgee_dir%/override/%file%~) BEGIN
 		COPY_LARGE + ~%bgee_dir%/override/%file%~ ~%patch_dir%~
 	END ELSE BEGIN
-		AT_NOW ~%weidu% --noautoupdate --no-auto-tp2 --logapp --log "%MOD_FOLDER%/temp/bash.debug" --game "%bgee_dir%" --use-lang "%LANGUAGE_BG1%" --out "%patch_dir%" --biff-get-rest "%file%"~
+		AT_NOW ~weidu --noautoupdate --no-auto-tp2 --logapp --log "%MOD_FOLDER%/temp/bash.debug" --game "%bgee_dir%" --use-lang "%LANGUAGE_BG1%" --out "%patch_dir%" --biff-get-rest "%file%"~
 		LAM bash_log
 	END
 END
@@ -317,7 +302,7 @@ END
 ACTION_FOR_EACH var IN bam bmp mos tis pvrz BEGIN
 	PRINT ~~
 	PRINT ~Preparing %var% files...~
-	AT_NOW ~%weidu% --noautoupdate --no-auto-tp2 --logapp --log "%MOD_FOLDER%/temp/bash.debug" --game "%bgee_dir%" --use-lang "%LANGUAGE_BG1%" --out "%MOD_FOLDER%%os_slash%temp%os_slash%biff" --biff-get-rest "^.*\.%var%$"~
+	AT_NOW ~weidu --noautoupdate --no-auto-tp2 --logapp --log "%MOD_FOLDER%/temp/bash.debug" --game "%bgee_dir%" --use-lang "%LANGUAGE_BG1%" --out "%MOD_FOLDER%%os_slash%temp%os_slash%biff" --biff-get-rest "^.*\.%var%$"~
 	LAM bash_log
 	ACTION_FOR_EACH dir IN ~%bgee_dir%/override~ ~%bgee_dir%/lang/%LANGUAGE_BG1%/override~ BEGIN
 		ACTION_BASH_FOR ~%dir%~ ~^.+\.%var%$~ BEGIN
@@ -333,7 +318,7 @@ ACTION_FOR_EACH var IN 2da /*plt*/ ttf wav wbm wfx BEGIN
 	PRINT ~~
 	PRINT ~Preparing %var% files...~
 	MKDIR ~%MOD_FOLDER%/temp/%var%~
-	AT_NOW ~%weidu% --noautoupdate --no-auto-tp2 --logapp --log "%MOD_FOLDER%/temp/bash.debug" --game "%bgee_dir%" --use-lang "%LANGUAGE_BG1%" --out "%MOD_FOLDER%/temp/%var%" --biff-get-rest "^.*\.%var%$"~
+	AT_NOW ~weidu --noautoupdate --no-auto-tp2 --logapp --log "%MOD_FOLDER%/temp/bash.debug" --game "%bgee_dir%" --use-lang "%LANGUAGE_BG1%" --out "%MOD_FOLDER%/temp/%var%" --biff-get-rest "^.*\.%var%$"~
 	LAM bash_log
 	ACTION_FOR_EACH dir IN ~%bgee_dir%/override~ ~%bgee_dir%/lang/%LANGUAGE_BG1%/override~ BEGIN
 		ACTION_BASH_FOR ~%dir%~ ~^.+\.%var%$~ BEGIN
@@ -349,7 +334,7 @@ ACTION_FOR_EACH file IN animate.ids anisnd.ids class.ids gtimes.ids kit.ids miss
 	ACTION_IF (FILE_EXISTS ~%bgee_dir%/override/%file%~) BEGIN
 		COPY_LARGE + ~%bgee_dir%/override/%file%~ ~%MOD_FOLDER%/temp/array~
 	END ELSE BEGIN
-		AT_NOW ~%weidu% --noautoupdate --no-auto-tp2 --logapp --log "%MOD_FOLDER%/temp/bash.debug" --game "%bgee_dir%" --use-lang "%LANGUAGE_BG1%" --out "%MOD_FOLDER%/temp/array" --biff-get-rest "%file%"~
+		AT_NOW ~weidu --noautoupdate --no-auto-tp2 --logapp --log "%MOD_FOLDER%/temp/bash.debug" --game "%bgee_dir%" --use-lang "%LANGUAGE_BG1%" --out "%MOD_FOLDER%/temp/array" --biff-get-rest "%file%"~
 		LAM bash_log
 	END
 END
@@ -1163,7 +1148,7 @@ APPEND_OUTER + ~%MOD_FOLDER%/temp/tables.lua~ ~%tbl_lua%~
 OUTER_SPRINT tbl_lua ~~
 
 //LUA regexp conversion
-AT_NOW ~%lua% %MOD_FOLDER%/lib/main.lua~
+AT_NOW ~lua %MOD_FOLDER%/lib/main.lua~
 LAM bash_log
 
 /////                                                  \\\\\
@@ -2710,8 +2695,6 @@ ACTION_FOR_EACH file IN EET_end EET_gui BEGIN
 	ACTION_IF ~%WEIDU_OS%~ STR_EQ ~osx~ BEGIN
 		COPY ~setup-EET.command~ ~setup-%file%.command~
 			REPLACE_TEXTUALLY ~EET/EET.tp2 --log SETUP-EET.DEBUG~ ~%file%/%file%.tp2 --log SETUP-%file%.DEBUG~
-	END ELSE BEGIN
-		COPY ~%weidu%~ ~setup-%file%%exe%~
 	END
 END
 
