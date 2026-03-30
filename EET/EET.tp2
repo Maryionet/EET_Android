@@ -67,7 +67,7 @@ LANGUAGE ~Simplified Chinese~
 	~EET/lang/zh_CN/dialog.tra~
 	~EET/lang/zh_CN/2da.tra~
 	~EET/lang/zh_CN/compatibility.tra~
-	
+
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////                                                  \\\\\
@@ -2517,7 +2517,7 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY table_EET_CHPTXT BEGIN
 	CHPTODRE , "-1" , "-1" , 71593 , "" => SCRODRE //Textscreen
 	CHPTSARA , "-1" , "-1" , 71590 , "" => SCRSARA //Textscreen
 	//other
-	GUICHP2A , "-1" , "-1" , 31809 , "SONG 81" => BPENDA //Textscreen
+	BPENDA , "-1" , "-1" , 231809 , "SONG 81" => BPENDA //Textscreen
 END
 ACTION_PHP_EACH table_EET_CHPTXT AS data => file BEGIN
 	ACTION_IF (data_2 > 2000000) BEGIN

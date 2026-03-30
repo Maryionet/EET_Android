@@ -804,7 +804,7 @@ DELETE + ~%patch_dir%/itm/BAG02.ITM~
 	~%patch_dir%/itm/MISC84.ITM~
 	~%patch_dir%/itm/MISC85.ITM~
 	~%patch_dir%/itm/MISC86.ITM~
-	~%patch_dir%/itm/MISC88.ITM~
+	//~%patch_dir%/itm/MISC88.ITM~ //BG2:EE item only has the luck bonus
 	~%patch_dir%/itm/MISC90.ITM~
 	~%patch_dir%/itm/MISC91.ITM~
 	~%patch_dir%/itm/MISC92.ITM~

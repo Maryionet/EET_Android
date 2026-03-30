@@ -213,7 +213,7 @@ THEN
     SetInterrupt(TRUE)
     Continue()
 END
->>>>>>>> 
+>>>>>>>>
 
 <<<<<<<< .../nBALDUR.baf
 >>>>>>>>
@@ -1593,7 +1593,7 @@ THEN
     Kill(Player2)
     Kill(Player1)
 END
->>>>>>>> 
+>>>>>>>>
 
 <<<<<<<< .../nDPLAYER3.baf
 >>>>>>>>
@@ -1861,13 +1861,13 @@ THEN
     SetPlayerSound("Edwin",-1,ATTACK2) // No such index
     SetPlayerSound("Edwin",-1,ATTACK3) // No such index
     SetPlayerSound("Edwin",-1,ATTACK4) // No such index
-    SetPlayerSound("Edwin",5350,DAMAGE) // 
-    SetPlayerSound("Edwin",5351,DYING) // 
+    SetPlayerSound("Edwin",5350,DAMAGE) //
+    SetPlayerSound("Edwin",5351,DYING) //
     SetPlayerSound("Edwin",3975,HURT) // I could use some help here, fools.
-    SetPlayerSound("Edwin",5345,AREA_FOREST) // I find the "great outdoors" chaotic and dirty. It needs a shaping will to slap the beasts into proper order. 
-    SetPlayerSound("Edwin",5346,AREA_CITY) // The city changes, but the fools within are always the same. 
+    SetPlayerSound("Edwin",5345,AREA_FOREST) // I find the "great outdoors" chaotic and dirty. It needs a shaping will to slap the beasts into proper order.
+    SetPlayerSound("Edwin",5346,AREA_CITY) // The city changes, but the fools within are always the same.
     SetPlayerSound("Edwin",5347,AREA_DUNGEON) // Could we not have hired some poor fools to do this for us? This is no place for a man of my stature.
-    SetPlayerSound("Edwin",5348,AREA_DAY) // Another day and more aimless stumbling about. 
+    SetPlayerSound("Edwin",5348,AREA_DAY) // Another day and more aimless stumbling about.
     SetPlayerSound("Edwin",5349,AREA_NIGHT) // Intelligent peoples do not wander around looking for trouble in the evening hours.
     SetPlayerSound("Edwin",3976,SELECT_COMMON1) // Yes?
     SetPlayerSound("Edwin",3977,SELECT_COMMON2) // What is it now?!
@@ -2318,8 +2318,8 @@ THEN
     SetPlayerSound("Imoen2",-1,ATTACK2) // No such index
     SetPlayerSound("Imoen2",-1,ATTACK3) // No such index
     SetPlayerSound("Imoen2",-1,ATTACK4) // No such index
-    SetPlayerSound("Imoen2",5395,DAMAGE) // 
-    SetPlayerSound("Imoen2",5396,DYING) // 
+    SetPlayerSound("Imoen2",5395,DAMAGE) //
+    SetPlayerSound("Imoen2",5396,DYING) //
     SetPlayerSound("Imoen2",4330,HURT) // Come on, now, don't let me suffer in this place. We've both had enough of that.
     SetPlayerSound("Imoen2",30731,AREA_FOREST) // I wish I could spend more time in the forest. Oh, it feels so alive.
     SetPlayerSound("Imoen2",30732,AREA_CITY) // I don't feel like I fit in with people in the city anymore.
@@ -2372,7 +2372,7 @@ THEN
     SetPlayerSound("Imoen2",30749,INVENTORY_FULL) // Sorry, but I couldn't hold that last item. It's on the ground.
     SetPlayerSound("Imoen2",30750,PICKED_POCKET) // Easy as pie.
     SetPlayerSound("Imoen2",30751,EXISTANCE1) // Now you see me, now you don't.
-    SetPlayerSound("Imoen2",30752,EXISTANCE2) // Ugh! The magic fizzled. 
+    SetPlayerSound("Imoen2",30752,EXISTANCE2) // Ugh! The magic fizzled.
     SetPlayerSound("Imoen2",30753,EXISTANCE3) // Shh! It's set and ready to go.
     SetPlayerSound("Imoen2",-1,EXISTANCE4) // No such index
     SetPlayerSound("Imoen2",10233,EXISTANCE5) // IMOEN chuckles when you ask her about her past, assuming you are just trying to keep her mind on happier times and places. She indulges you, and certainly does cheer up when speaking of how you spent your youths together in Candlekeep. She arrived there the same as you, in the company of your foster father Gorion, but despite this similarity, she grew up much more carefree than you did. Indeed, her lighthearted outlook has long kept her immune to the hardships of the world, though the dark confines and horrors of your current location have definitely taken their toll.
@@ -2409,14 +2409,14 @@ THEN
     SetPlayerSound("Jaheira",-1,ATTACK2) // No such index
     SetPlayerSound("Jaheira",-1,ATTACK3) // No such index
     SetPlayerSound("Jaheira",-1,ATTACK4) // No such index
-    SetPlayerSound("Jaheira",5353,DAMAGE) // 
-    SetPlayerSound("Jaheira",5354,DYING) // 
+    SetPlayerSound("Jaheira",5353,DAMAGE) //
+    SetPlayerSound("Jaheira",5354,DYING) //
     SetPlayerSound("Jaheira",4017,HURT) // I will require healing if I am to be of use to the group.
     SetPlayerSound("Jaheira",4018,AREA_FOREST) // I am at peace in the outdoor places, though it never seems to last.
     SetPlayerSound("Jaheira",4019,AREA_CITY) // I have no patience for cities. Our stay had best be a short one.
     SetPlayerSound("Jaheira",4020,AREA_DUNGEON) // Nature could find a home here if it were properly cleansed and balanced.
-    SetPlayerSound("Jaheira",5352,AREA_DAY) // I welcome each day we see. Some are not so lucky. 
-    SetPlayerSound("Jaheira",4021,AREA_NIGHT) // Nature has many children that call the darkness home. I am not one of them. 
+    SetPlayerSound("Jaheira",5352,AREA_DAY) // I welcome each day we see. Some are not so lucky.
+    SetPlayerSound("Jaheira",4021,AREA_NIGHT) // Nature has many children that call the darkness home. I am not one of them.
     SetPlayerSound("Jaheira",4022,SELECT_COMMON1) // Nature's servant awaits.
     SetPlayerSound("Jaheira",4023,SELECT_COMMON2) // I await your need.
     SetPlayerSound("Jaheira",54350,SELECT_COMMON3) // Yes?
@@ -2461,10 +2461,10 @@ THEN
     SetPlayerSound("Jaheira",30775,CRITICAL_MISS) // Ugh!
     SetPlayerSound("Jaheira",30776,TARGET_IMMUNE) // Weapon has no effect!
     SetPlayerSound("Jaheira",30777,INVENTORY_FULL) // I have too much in my pack as it is. You'll have to pick that up off the ground.
-    SetPlayerSound("Jaheira",30778,PICKED_POCKET) // 
-    SetPlayerSound("Jaheira",30779,EXISTANCE1) // 
+    SetPlayerSound("Jaheira",30778,PICKED_POCKET) //
+    SetPlayerSound("Jaheira",30779,EXISTANCE1) //
     SetPlayerSound("Jaheira",30780,EXISTANCE2) // My concentration is undone. My spell has failed!
-    SetPlayerSound("Jaheira",30781,EXISTANCE3) // 
+    SetPlayerSound("Jaheira",30781,EXISTANCE3) //
     SetPlayerSound("Jaheira",-1,EXISTANCE4) // No such index
     SetPlayerSound("Jaheira",10199,EXISTANCE5) // When asked about her past, JAHEIRA glares as she speaks. She says that she was born in the Tethyr region to a loyalist of the King Alemander regime, unfortunately during the Tethyrian civil war. Her family was among the nobles targeted by the angry mobs of peasants, and she was only spared because a servant girl took her from their castle before it fell. An enclave of druids in the Forest of Tethir was willing to grant shelter, and Jaheira grew up headstrong in their care. She believes the only way to protect nature is to have an active role in the world, but the cost of this dedication seems to weigh heavily on her mind these days.  She grows quiet when you ask about recent events, and while she gives the appearance of her normal, strong-willed self, there is a look of doubt in her eyes. It would seem that she has seen too many friends fall to remain unaffected. She does not like the subject, and lets it drop.
     SetPlayerSound("Jaheira",-1,BG2EE_SELECT_RARE1) // No such index
@@ -2500,8 +2500,8 @@ THEN
     SetPlayerSound("Minsc",-1,ATTACK2) // No such index
     SetPlayerSound("Minsc",-1,ATTACK3) // No such index
     SetPlayerSound("Minsc",-1,ATTACK4) // No such index
-    SetPlayerSound("Minsc",5359,DAMAGE) // 
-    SetPlayerSound("Minsc",5360,DYING) // 
+    SetPlayerSound("Minsc",5359,DAMAGE) //
+    SetPlayerSound("Minsc",5360,DYING) //
     SetPlayerSound("Minsc",4094,HURT) // I must get aid soon. Boo is too young to have to avenge me.
     SetPlayerSound("Minsc",4095,AREA_FOREST) // You know... I think the forest likes Boo.
     SetPlayerSound("Minsc",5357,AREA_CITY) // Cities always teem with evil and decay. Let's give it a good shake and see what falls out!
@@ -2552,10 +2552,10 @@ THEN
     SetPlayerSound("Minsc",31850,CRITICAL_MISS) // Gah, that's not right!
     SetPlayerSound("Minsc",31901,TARGET_IMMUNE) // No effect? I need bigger sword!
     SetPlayerSound("Minsc",33805,INVENTORY_FULL) // I have had to drop what you gave me. I have only two arms and no more space.
-    SetPlayerSound("Minsc",34379,PICKED_POCKET) // 
+    SetPlayerSound("Minsc",34379,PICKED_POCKET) //
     SetPlayerSound("Minsc",34380,EXISTANCE1) // None shall see me... though my battle cry may give me away.
     SetPlayerSound("Minsc",34381,EXISTANCE2) // I turned to shield Boo and have lost my spell. I am NOT sorry.
-    SetPlayerSound("Minsc",34744,EXISTANCE3) // 
+    SetPlayerSound("Minsc",34744,EXISTANCE3) //
     SetPlayerSound("Minsc",-1,EXISTANCE4) // No such index
     SetPlayerSound("Minsc",10185,EXISTANCE5) // When asked about his past, MINSC proclaims that he is a berserker warrior from the nation of Rashemen in the Utter East, though his affinity for animals speaks to his skill as a ranger as well. He originally came to the Sword Coast on a dajemma, a ritual journey to manhood, as the bodyguard of a young Wychlaran of Rashemen named Dynaheir. To his shame, Dynaheir is now dead, and he fears that the doors of the honored Ice Dragon Berserker Lodge are forever closed to him. This personal tragedy has obviously not strengthened Minsc's hold on reality, as evidenced by his continued dependence on his animal companion "Boo," a creature that he claims is a miniature giant space hamster. Apparently such things do exist somewhere in the Realms, but Minsc has surely taken too many blows to the head.
     SetPlayerSound("Minsc",-1,BG2EE_SELECT_RARE1) // No such index
@@ -2732,11 +2732,11 @@ THEN
     SetPlayerSound("Viconia",-1,ATTACK2) // No such index
     SetPlayerSound("Viconia",-1,ATTACK3) // No such index
     SetPlayerSound("Viconia",-1,ATTACK4) // No such index
-    SetPlayerSound("Viconia",29814,DAMAGE) // 
-    SetPlayerSound("Viconia",5285,DYING) // 
+    SetPlayerSound("Viconia",29814,DAMAGE) //
+    SetPlayerSound("Viconia",5285,DYING) //
     SetPlayerSound("Viconia",3622,HURT) // No... it cannot end like this... I shall not allow it!
     SetPlayerSound("Viconia",3623,AREA_FOREST) // I am still unused to all this green and fragrant brightness... part of me yet looks for the hidden spider's web amongst all this.
-    SetPlayerSound("Viconia",5281,AREA_CITY) // The stink of the collected rivvin... how I despise them all. 
+    SetPlayerSound("Viconia",5281,AREA_CITY) // The stink of the collected rivvin... how I despise them all.
     SetPlayerSound("Viconia",5283,AREA_DUNGEON) // I swim in memories in such a place as this... most unpleasant memories.
     SetPlayerSound("Viconia",3624,AREA_DAY) // Ahhh, this light... still it burns me!
     SetPlayerSound("Viconia",3625,AREA_NIGHT) // There is no roof to this world. I feel as if I shall fall into this sky of yours sometimes.
@@ -2784,12 +2784,12 @@ THEN
     SetPlayerSound("Viconia",30529,CRITICAL_MISS) // Vith'ir!
     SetPlayerSound("Viconia",30534,TARGET_IMMUNE) // My weapon is faulty!
     SetPlayerSound("Viconia",30535,INVENTORY_FULL) // I will carry no more. You may scrounge for what I have dropped upon the ground.
-    SetPlayerSound("Viconia",30536,PICKED_POCKET) // 
-    SetPlayerSound("Viconia",30537,EXISTANCE1) // 
+    SetPlayerSound("Viconia",30536,PICKED_POCKET) //
+    SetPlayerSound("Viconia",30537,EXISTANCE1) //
     SetPlayerSound("Viconia",30538,EXISTANCE2) // My thoughts are disrupted. My magic is lost!
-    SetPlayerSound("Viconia",30539,EXISTANCE3) // 
+    SetPlayerSound("Viconia",30539,EXISTANCE3) //
     SetPlayerSound("Viconia",-1,EXISTANCE4) // No such index
-    SetPlayerSound("Viconia",10217,EXISTANCE5) // When you ask about her recent past, VICONIA snarls that it is not your place to know such things of her. There is still pride in her voice when she speaks about her Underdark home of Menzoberranzan, but you get the feeling that there is nothing left for her there, her family and House most likely victims of typically vicious drow "politics." She has continued in her worship of the night goddess Shar, but that appears to have been the only boon to her exile. She seems sullen and bitter, and has certainly learned much of the intolerance she must face while living amongst surface peoples. Her natural abilities as a drow have faded with time, also contributing to her lost sense of belonging. 
+    SetPlayerSound("Viconia",10217,EXISTANCE5) // When you ask about her recent past, VICONIA snarls that it is not your place to know such things of her. There is still pride in her voice when she speaks about her Underdark home of Menzoberranzan, but you get the feeling that there is nothing left for her there, her family and House most likely victims of typically vicious drow "politics." She has continued in her worship of the night goddess Shar, but that appears to have been the only boon to her exile. She seems sullen and bitter, and has certainly learned much of the intolerance she must face while living amongst surface peoples. Her natural abilities as a drow have faded with time, also contributing to her lost sense of belonging.
     SetPlayerSound("Viconia",-1,BG2EE_SELECT_RARE1) // No such index
     SetPlayerSound("Viconia",-1,BG2EE_SELECT_RARE2) // No such index
     SetPlayerSound("Viconia",-1,BG2EE_SELECT_RARE3) // No such index
@@ -3671,15 +3671,35 @@ END~
 			PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
 		END
 	END
+  DECOMPILE_AND_PATCH BEGIN
+		SPRINT textToReplace ~HasDLC("Neera")~
+		COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+		PATCH_IF (num_matches > 0) BEGIN
+			REPLACE_TEXTUALLY ~%textToReplace%~ ~HasDLC("Neera")
+			InMyArea("NEERA")
+			!StateCheck("NEERA",CD_STATE_NOTVALID)~
+			PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+		END ELSE BEGIN
+			PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+		END
+	END
 BUT_ONLY
 
-<<<<<<<< .../AR0500-et.baf
+<<<<<<<< .../OHNMCUT1-et.baf
 IF
-  Global("OHN_INTRO_SCENE","AR0500",2)
+  Global("OHN_INTRO_SCENE","AR0500",1)
   Global("K#NeeraImport","AR0500",0)
   BeenInParty("Neera")
   GlobalLT("chapter","GLOBAL",20)
   !StateCheck("Neera",STATE_REALLY_DEAD)
+  HasDLC("Neera")
+  !Detect([PC])
+  !Range(Player1,40)
+  !Range(Player2,40)
+  !Range(Player3,40)
+  !Range(Player4,40)
+  !Range(Player5,40)
+  !Range(Player6,40)
 THEN
   RESPONSE #100
     ActionOverride("Neera",SetDialog("NEERA"))
@@ -3718,7 +3738,7 @@ THEN
     SetPlayerSound("Neera",-1,ATTACK3) // No such index
     SetPlayerSound("Neera",-1,ATTACK4) // No such index
     SetPlayerSound("Neera",88533,DAMAGE) // Ouch. OUCH!
-    SetPlayerSound("Neera",88534,DYING) // 
+    SetPlayerSound("Neera",88534,DYING) //
     SetPlayerSound("Neera",88518,HURT) // Please! Someone... anyone?! I'm in... quite a bit of pain here.
     SetPlayerSound("Neera",88535,AREA_FOREST) // Being in the woods always reminds me of the High Forest. I like it.
     SetPlayerSound("Neera",88536,AREA_CITY) // Are you gonna make me cast spells here? There are a lot of people around.
@@ -3784,11 +3804,19 @@ THEN
 END
 
 IF
-  Global("OHN_INTRO_SCENE","AR0500",2)
+  Global("OHN_INTRO_SCENE","AR0500",1)
   Global("K#NeeraImport","AR0500",0)
   !BeenInParty("Neera")
   GlobalLT("chapter","GLOBAL",20)
   !StateCheck("Neera",STATE_REALLY_DEAD)
+  HasDLC("Neera")
+  !Detect([PC])
+  !Range(Player1,40)
+  !Range(Player2,40)
+  !Range(Player3,40)
+  !Range(Player4,40)
+  !Range(Player5,40)
+  !Range(Player6,40)
   //XPLT(Player1,250000)
 THEN
   RESPONSE #100
@@ -3862,7 +3890,7 @@ THEN
 END*/
 >>>>>>>>
 
-EXTEND_TOP ~AR0500.BCS~ ~.../AR0500-et.baf~
+EXTEND_TOP ~OHNMCUT1.BCS~ ~.../OHNMCUT1-et.baf~
 
 COPY_EXISTING ~OHNCUT1A.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
