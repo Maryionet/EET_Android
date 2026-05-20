@@ -773,8 +773,7 @@ ACTION_IF ~%WEIDU_OS%~ STR_EQ ~win32~ BEGIN
 	AT_NOW ~setup-EET.exe --noautoupdate --no-auto-tp2 --traify-tlk --min %str_min% --out "%USER_DIRECTORY%\save\saves.tra"~
 END ELSE BEGIN //osx, unix
 	AT_NOW ~rm -f "%USER_DIRECTORY%/save/saves.tra"~ EXACT
-	AT_NOW ~chmod +x ./EET/bin/%WEIDU_OS%/weidu~ EXACT
-	AT_NOW ~./EET/bin/%WEIDU_OS%/weidu --noautoupdate --no-auto-tp2 --traify-tlk --min %str_min% --out "%USER_DIRECTORY%/save/saves.tra"~
+	AT_NOW ~weidu --noautoupdate --no-auto-tp2 --traify-tlk --min %str_min% --out "%USER_DIRECTORY%/save/saves.tra"~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~add_spell.ids~ BEGIN
@@ -883,5 +882,7 @@ REQUIRE_PREDICATE !FILE_CONTAINS ~override/EET.flag~ ~TRA_EXPORTED~ ~~
 ///// Save patcher                                     \\\\\
 /////                                                  \\\\\
 
+INCLUDE ~%MOD_FOLDER%/lib/saves.tph~
+APPEND + ~EET.flag~ ~SAVES_UPDATED~
 INCLUDE ~%MOD_FOLDER%/lib/saves.tph~
 APPEND + ~EET.flag~ ~SAVES_UPDATED~
